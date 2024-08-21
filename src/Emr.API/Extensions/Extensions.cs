@@ -1,4 +1,6 @@
-﻿namespace Emr.API.Extensions
+﻿using Emr.Domain.AggregatesModel.Patient;
+
+namespace Emr.API.Extensions
 {
     internal static class Extensions
     {
@@ -7,7 +9,7 @@
             var services = builder.Services;
 
             // Register 
-             //services.AddScoped<IOrderQueries, OrderQueries>();
+             services.AddScoped<IPatientRepository, PatientRepository>();
         }
 
     }
