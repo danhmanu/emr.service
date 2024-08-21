@@ -14,4 +14,9 @@
     <Folder Include="Application\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Emr.Domain\Emr.Domain.csproj" />
+    <ProjectReference Include="..\Emr.Infrastructure\Emr.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

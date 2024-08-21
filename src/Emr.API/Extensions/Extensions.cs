@@ -1,4 +1,5 @@
 ﻿using Emr.Domain.AggregatesModel.Patient;
+using Emr.Infrastructure.Repositories;
 
 namespace Emr.API.Extensions
 {

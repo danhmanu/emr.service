@@ -9,5 +9,7 @@ namespace Emr.Infrastructure.Repositories
 {
     public class PatientRepository : IPatientRepository
     {
+        public PatientRepository(Emr) {
+        }
     }
 }
