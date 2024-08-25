@@ -1,4 +1,5 @@
 ﻿using Emr.Domain.AggregatesModel.Patient;
+using Emr.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,11 @@ namespace Emr.Infrastructure.Repositories
 {
     public class PatientRepository : IPatientRepository
     {
-        public PatientRepository(Emr) {
+        private readonly EmrContext contextDb;
+        public PatientRepository(EmrContext context) {
+            contextDb = context;
         }
+
+
     }
 }

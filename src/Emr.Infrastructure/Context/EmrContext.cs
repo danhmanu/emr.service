@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Emr.Domain.AggregatesModel.Patient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Data;
 
 namespace Emr.Infrastructure.Context
 {
-    internal class EmrContext
+    public class EmrContext(DbContextOptions<EmrContext> options) : DbContext(options)
     {
+        public DbSet<emrpatient> emrpatients { get; set; }
     }
 }
