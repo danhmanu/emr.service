@@ -1,4 +1,4 @@
-using Emr.API;
+﻿using Emr.API;
 using Emr.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,10 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
     builder.AddApplicationServices();
 }
 
-// Add services to the container.
-//builder.Services.AddControllers();
-
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // Configure the HTTP request pipeline.
 

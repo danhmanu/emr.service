@@ -6,7 +6,6 @@ namespace Emr.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class PatientController : ControllerBase
     {
         private readonly ILogger<PatientController> _logger;
@@ -14,6 +13,14 @@ namespace Emr.API.Controllers
         public PatientController(ILogger<PatientController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet]
+        [Authorize]
+        [Route("/GetProtectedData")]
+        public IActionResult GetProtectedData()
+        {
+            return Ok(new { message = "This is protected data." });
         }
 
     }

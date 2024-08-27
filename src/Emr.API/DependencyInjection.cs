@@ -1,13 +1,18 @@
-﻿namespace Emr.API
+﻿using Emr.Domain.AggregatesModel.Patient;
+using Emr.Infrastructure.Context;
+using Emr.Infrastructure.Repositories;
+using Emr.Infrastructure.UniOfWork;
+using Microsoft.EntityFrameworkCore;
+
+namespace Emr.API
 {
     public static class DependencyInjection
     {
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
-            services.AddProblemDetails();
+            // Register DI
+            services.AddScoped<IUnitOfWork, UnitOfWork_Context>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
 
             return services;
         }
