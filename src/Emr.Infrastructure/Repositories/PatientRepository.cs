@@ -15,7 +15,10 @@ namespace Emr.Infrastructure.Repositories
         public PatientRepository(EmrContext context) {
             contextDb = context;
         }
-        public DbSet<emrpatient> emrpatients { get; set; }
+        public List<emrpatient> GetPatientFull()
+        {
+            return contextDb.emrpatients.ToList();
+        }
 
     }
 }

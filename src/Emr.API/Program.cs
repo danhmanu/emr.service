@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.AddApplicationServices();
 }
 
+var ConnectionString = builder.Configuration.GetConnectionString("icaredb");
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

@@ -2,6 +2,6 @@
 {
     public interface IPatientRepository
     {
-
+        List<emrpatient> GetPatientFull();
     }
 }
