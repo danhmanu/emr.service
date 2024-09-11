@@ -1,5 +1,6 @@
 ﻿using Emr.Domain.AggregatesModel.Patient;
 using Emr.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Emr.Infrastructure.Repositories
         public PatientRepository(EmrContext context) {
             contextDb = context;
         }
-
+        public DbSet<emrpatient> emrpatients { get; set; }
 
     }
 }

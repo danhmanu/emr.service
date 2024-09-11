@@ -21,7 +21,7 @@ namespace Emr.API.Extensions
             // Connect Db
             services.AddDbContext<EmrContext>(options =>
             {
-                var ConnectionString = builder.Configuration.GetConnectionString("orderingdb");
+                var ConnectionString = builder.Configuration.GetConnectionString("icaredb");
                 options.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
             });
 
@@ -80,6 +80,7 @@ namespace Emr.API.Extensions
             });
 
         }
+
 
     }
 }

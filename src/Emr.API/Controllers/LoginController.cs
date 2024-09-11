@@ -17,7 +17,7 @@ namespace Emr.API.Controllers
         public IActionResult Login([FromBody] LoginModel login)
         {
             // Kiểm tra thông tin đăng nhập (thường là so sánh với dữ liệu trong cơ sở dữ liệu)
-            if (login.Username == "test" && login.Password == "password")
+            //if (login.Username == "test" && login.Password == "password")
             {
                 //AuthenticationJwt jwt = new AuthenticationJwt();
                 //var token = jwt.GenerateJwtToken();
