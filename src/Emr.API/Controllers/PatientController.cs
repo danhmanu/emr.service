@@ -25,6 +25,7 @@ namespace Emr.API.Controllers
         public IActionResult GetProtectedData()
         {
             var Pa = Patientrepository.GetPatientFull();
+            var Pa2 = Patientrepository.GetPatientFull();
             return Ok(new { message = Pa });
         }
 
