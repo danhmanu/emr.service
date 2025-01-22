@@ -17,7 +17,14 @@ namespace Emr.Infrastructure.Repositories
         }
         public List<emrpatient> GetPatientFull()
         {
-            return contextDb.emrpatients.ToList();
+            try
+            {
+                return contextDb.emrpatients.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

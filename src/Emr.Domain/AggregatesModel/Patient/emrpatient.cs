@@ -1,33 +1,34 @@
 ﻿using Emr.Domain.SeedWork;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Emr.Domain.AggregatesModel.Patient
 {
-    public class emrpatient : IAggregateRoot
+    [Table("emrpatient")]
+    public partial class emrpatient : IAggregateRoot
     {
-        [Key()]
-        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int siterf { get; set; }
-        [Key]
-        [Column(Order = 1)]
+
         public Guid patid { get; set; }
 
         public decimal patcode { get; set; }
 
+        [Required]
+        [StringLength(50)]
         public string hospcode { get; set; }
 
-        public string medicalcode { get; set; }
+        [StringLength(50)]
+        public string? medicalcode { get; set; }
 
-        public string lastname { get; set; }
-        public string firstname { get; set; }
+        [StringLength(50)]
+        public string? lastname { get; set; }
 
-        public string fullname { get; set; }
+        [StringLength(50)]
+        public string? firstname { get; set; }
+
+        [StringLength(255)]
+        public string? fullname { get; set; }
 
         public int sex { get; set; }
 
@@ -39,30 +40,45 @@ namespace Emr.Domain.AggregatesModel.Patient
 
         public int? daybr { get; set; }
 
-        public string paport { get; set; }
+        [StringLength(20)]
+        public string? paport { get; set; }
 
         public int? idnation { get; set; }
 
         public int? idjob { get; set; }
 
         public int? idethnic { get; set; }
-        public string email { get; set; }
 
-        public string phone { get; set; }
+        [StringLength(100)]
+        public string? email { get; set; }
 
-        public string faname { get; set; }
+        [StringLength(20)]
+        public string? phone { get; set; }
 
-        public string facard { get; set; }
+        [StringLength(100)]
+        public string? faname { get; set; }
+
+        [StringLength(20)]
+        public string? facard { get; set; }
 
         public int active { get; set; }
 
-        public string usercr { get; set; }
+        [StringLength(20)]
+        public string? usercr { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime timecr { get; set; }
-        public string userup { get; set; }
 
+        [StringLength(20)]
+        public string? userup { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime timeup { get; set; }
-        public string computer { get; set; }
 
-        public string attributes { get; set; }
+        [StringLength(255)]
+        public string? computer { get; set; }
+
+        public string? attributes { get; set; }
+        public DateTime? hourminutebr { get; set; }
     }
 }

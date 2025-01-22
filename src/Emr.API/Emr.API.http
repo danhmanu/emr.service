@@ -1,6 +1,6 @@
 @Emr.API_HostAddress = http://localhost:5191
 
-GET {{Emr.API_HostAddress}}/weatherforecast/
+GET {{Emr.API_HostAddress}}/GetProtectedData/
 Accept: application/json
 
 ###
